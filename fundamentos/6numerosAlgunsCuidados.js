@@ -1,0 +1,8 @@
+console.log(7/0)
+console.log("10"/2)
+console.log('10'/2)//nao faz sentido string ele divide mesmo
+console.log('3'+2)//string ganha
+console.log("show!"*2)
+console.log(0.3+0.7)
+//console.log(10.toString())
+console.log((10.345).toFixed(2))
