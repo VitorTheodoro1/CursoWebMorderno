@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,9 +12,10 @@
         }
     </style>
 </head>
+
 <body>
-    <header> 
-        <h1>Exercicios HTML</h1> 
+    <header>
+        <h1>Exercicios HTML</h1>
     </header>
     <nav>
         <a href wm-nav="exercicios/teste.html"> 00- teste</a> |
@@ -22,7 +24,11 @@
         <a href wm-nav="exercicios/listas.html"> 03- Listas</a> |
         <a href wm-nav="exercicios/listaANinhada.html"> 04- Lista Aninhada</a> |
         <a href wm-nav="exercicios/links.html"> 05- links</a> |
+        <a href wm-nav="exercicios/tabela.html"> 06- tabelas</a> |
         <a href wm-nav="exercicios/form/form.html"> 07- formulario</a> |
+        <a href wm-nav="exercicios/imagens.html"> 08- Imagens</a> |
+        <a href wm-nav="exercicios/video.html"> 09- videos</a> |
+        <a href wm-nav="exercicios/tagsNaoVisuais.html"> 10- tags</a> |
 
     </nav>
     <section id="conteudo"> </section>
@@ -30,17 +36,18 @@
         Curso de Web Moderno
     </footer>
     <script>
-        document.querySelectorAll('[wm-nav]').forEach(link => {
+        document.querySelectorAll('[wm-nav]').forEach(link => { // pegando e varrendo as tags
             const conteudo = document.getElementById('conteudo')
 
-            link.onclick = function(e) {
-                e.preventDefault()
-                fetch(link.getAttribute('wm-nav'))
+            link.onclick = function (e) { // atribuindo uma função para o evento onclick
+                e.preventDefault() // previnir que a navegação padrão ocorra
+                fetch(link.getAttribute('wm-nav'))// requisição ajax
                     .then(resp => resp.text())
                     .then(html => conteudo.innerHTML = html)
             }
         })
     </script>
-    
+
 </body>
+
 </html>
